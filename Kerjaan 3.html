@@ -188,23 +188,17 @@
       XLSX.writeFile(wb, "komisi_sarana_kasih_kargo.xlsx");
     }
   </script>
-
-  <!-- ✅ Google Sheets Web App Integration -->
-  <script>
-    const webAppUrl = 'https://script.google.com/macros/s/AKfycbwCriZQm5ON754689l21dIG_0vg93Eu3YPWHeUXTliAEb2ux5Qi161HkfN5Zh8vWk7D/exec';
-
-    window.saveToGoogleSheets = function(data) {
-      fetch(webAppUrl, {
-        method: 'POST',
-        body: JSON.stringify(data),
-        headers: {
-          'Content-Type': 'application/json'
-        }
-      })
-      .then(res => res.text())
-      .then(msg => console.log("✅ Saved to Google Sheets:", msg))
-      .catch(err => console.error("❌ Error saving to Google Sheets:", err));
-    };
-  </script>
+<div style="margin-top: 50px; background-color: #ffffff; padding: 20px; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.06); max-width: 600px; margin-left: auto; margin-right: auto;">
+    <h2 style="color: #4B6CB7; text-align: center;">Log Update</h2>
+    <p><strong>Komisi Rule:</strong></p>
+    <pre style="background-color: #f1f5fa; padding: 15px; border-radius: 8px; font-family: monospace; font-size: 14px;">
+if (penerima.includes("SEMARANG")) {
+  komisiRate = 0.25;
+} else {
+  komisiRate = 0.35;
+}
+    </pre>
+    <p style="font-size: 13px; color: #555;">Updated: 2025-05-11</p>
+  </div>
 </body>
 </html>
