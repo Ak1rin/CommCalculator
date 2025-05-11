@@ -8,15 +8,15 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <style>
     :root {
-      --primary-pastel: #A8E6CF; /* Pastel Mint Green */
-      --secondary-pastel: #FFD3B6; /* Soft Coral/Peach */
-      --accent-pastel: #F4B860; /* Muted Gold/Yellow for emphasis */
-      --text-dark: #5D6D7E; /* Soft Dark Blue/Grey for text */
-      --text-light: #85929E; /* Lighter grey for secondary text */
-      --bg-light: #FEFBF6; /* Very Light Cream/Off-white */
+      --primary-pastel: #A8E6CF; 
+      --secondary-pastel: #FFD3B6; 
+      --accent-pastel: #F4B860; 
+      --text-dark: #5D6D7E; 
+      --text-light: #85929E; 
+      --bg-light: #FEFBF6; 
       --white-color: #ffffff;
       --border-color: #EAEAEA;
-      --border-radius: 10px; /* Slightly larger for a softer feel */
+      --border-radius: 10px; 
       --box-shadow: 0 5px 20px rgba(0, 0, 0, 0.07);
     }
 
@@ -29,7 +29,7 @@
       line-height: 1.7;
     }
 
-    .page-container { /* Renamed from .container to avoid conflict if nested */
+    .page-container { 
       max-width: 1000px;
       margin: 30px auto;
       padding: 25px 30px;
@@ -40,11 +40,11 @@
 
     header {
       background: linear-gradient(135deg, var(--primary-pastel), var(--secondary-pastel));
-      color: var(--text-dark); /* Darker text for better contrast on light pastels */
+      color: var(--text-dark); 
       text-align: center;
       padding: 25px 15px;
-      font-size: 2.5em; /* Increased size */
-      font-weight: 800; /* Bolder */
+      font-size: 2.5em; 
+      font-weight: 800; 
       letter-spacing: 1px;
       border-radius: var(--border-radius);
       margin-bottom: 25px;
@@ -56,17 +56,17 @@
     }
 
     nav {
-      margin-bottom: 30px; /* Increased margin */
+      margin-bottom: 30px; 
       text-align: center;
     }
 
     nav a {
       color: var(--accent-pastel);
       text-decoration: none;
-      font-weight: 700; /* Bold */
+      font-weight: 700; 
       font-size: 1.1em;
       padding: 8px 15px;
-      border-radius: 20px; /* Pill shape */
+      border-radius: 20px; 
       background-color: var(--white-color);
       border: 2px solid var(--secondary-pastel);
       transition: all 0.3s ease;
@@ -89,7 +89,7 @@
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
       gap: 20px;
-      align-items: end; /* Align items to the bottom for varied input heights */
+      align-items: end; 
       box-shadow: inset 0 2px 4px rgba(0,0,0,0.03);
     }
     .input-group {
@@ -124,11 +124,11 @@
     }
 
     .button-group {
-      grid-column: 1 / -1; /* Make button group span full width if needed */
+      grid-column: 1 / -1; 
       display: flex;
       justify-content: center;
       gap: 15px;
-      margin-top: 10px; /* Add some space if inputs are stacked */
+      margin-top: 10px; 
     }
 
     button {
@@ -149,48 +149,48 @@
 
     button.add-btn {
       background-color: var(--primary-pastel);
-      color: var(--text-dark); /* Better contrast */
+      color: var(--text-dark); 
     }
     button.add-btn:hover {
-      background-color: #8cd9b3; /* Darker mint */
+      background-color: #8cd9b3; 
       transform: translateY(-2px);
     }
 
     button.export-btn {
       background-color: var(--secondary-pastel);
-      color: var(--text-dark); /* Better contrast */
+      color: var(--text-dark); 
     }
     button.export-btn:hover {
-      background-color: #ffc5a1; /* Darker coral */
+      background-color: #ffc5a1; 
       transform: translateY(-2px);
     }
 
     table {
       width: 100%;
-      border-collapse: separate; /* Allows for border-spacing and border-radius on table */
+      border-collapse: separate; 
       border-spacing: 0;
       margin-top: 20px;
       box-shadow: var(--box-shadow);
       border-radius: var(--border-radius);
-      overflow: hidden; /* Important for border-radius on table */
+      overflow: hidden; 
     }
 
     th, td {
       border-bottom: 1px solid var(--border-color);
-      padding: 15px; /* Increased padding */
-      text-align: left; /* Professional default */
+      padding: 15px; 
+      text-align: left; 
       font-size: 0.95em;
     }
     td:last-child, th:last-child {
-        text-align: right; /* Align currency to the right */
+        text-align: right; 
     }
-     td:nth-child(1), th:nth-child(1) { /* No / Counter */
+     td:nth-child(1), th:nth-child(1) { 
         text-align: center;
     }
-     td:nth-child(2), th:nth-child(2) { /* Q */
+     td:nth-child(2), th:nth-child(2) { 
         text-align: center;
     }
-     td:nth-child(3), th:nth-child(3) { /* KG */
+     td:nth-child(3), th:nth-child(3) { 
         text-align: center;
     }
 
@@ -208,13 +208,12 @@
     }
 
     tbody tr:hover {
-      background-color: #e6f7f1; /* Very light mint for hover */
+      background-color: #e6f7f1; 
     }
     tbody tr td {
         color: var(--text-dark);
     }
 
-    /* Responsive adjustments */
     @media (max-width: 768px) {
       body {
         padding: 10px;
@@ -227,7 +226,7 @@
         padding: 20px 10px;
       }
       .form-controls {
-        grid-template-columns: 1fr; /* Stack form elements */
+        grid-template-columns: 1fr; 
       }
       th, td {
         padding: 10px;
@@ -236,7 +235,7 @@
       button {
         padding: 10px 15px;
         font-size: 0.9em;
-        width: 100%; /* Make buttons full width on mobile for easier tapping */
+        width: 100%; 
       }
       .button-group {
         flex-direction: column;
@@ -313,9 +312,8 @@
       <a href="Kerjaan2.html"><i class="fas fa-arrow-left"></i> Kembali ke SINAR TRANS EXPRESS</a>
     </nav>
 
-  <!-- Main Content (what you already have) -->
+  <!-- Main Content  -->
   <div class="main-content">
-    <!-- Your existing site content here -->
   </div>
 </div>
 
@@ -402,11 +400,11 @@
       const isSemarangPengirim = pengirim.toLowerCase().includes("semarang");
 
       if (isSemarangPenerima) {
-        komisi = harga * 0.25; // Komisi 25% dari harga
-      } else if (!isSemarangPengirim) { // if not semarang sender AND not semarang receiver (already handled)
-        komisi = harga * 0.5; // Komisi 50% dari harga
+        komisi = harga * 0.25; 
+      } else if (!isSemarangPengirim) { 
+        komisi = harga * 0.5; 
       }
-      // If pengirim is Semarang and penerima is not Semarang, komisi remains 0 based on original logic.
+  
 
       const table = document.getElementById("dataTable").getElementsByTagName("tbody")[0];
       const newRow = table.insertRow();
@@ -421,13 +419,13 @@
         <td>${formatCurrency(komisi)}</td>
       `;
 
-      // Clear input fields
+      
       document.getElementById("q").value = "";
       document.getElementById("kg").value = "";
       document.getElementById("pengirim").value = "";
       document.getElementById("penerima").value = "";
       document.getElementById("harga").value = "";
-      document.getElementById("q").focus(); // Set focus back to the first input
+      document.getElementById("q").focus();
     }
 
     function exportToExcel() {
@@ -465,8 +463,6 @@ if (isSemarangPenerima) {
 }
       </pre>
     </div>
-
-    <!-- Add more changelog entries below as needed -->
   </aside>
 </div>
 
