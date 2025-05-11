@@ -3,183 +3,204 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Hub Login</title>
+  <title>Komisi Calculator Delivery Portal</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/a2e0bdf4b8.js" crossorigin="anonymous"></script>
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&display=swap');
-
     :root {
-      --pastel-pink: #f9c6d3;
-      --pastel-blue: #c6e2ff;
-      --pastel-purple: #d8c6f9;
-      --pastel-mint: #c6f9e4;
-      --pastel-yellow: #fff7c6;
-      --text-color: #444;
-      --bg-white: #fff;
+      --pink: #f9c6d3;
+      --mint: #c6f9e4;
+      --blue: #c6e2ff;
+      --purple: #d8c6f9;
+      --yellow: #fff7c6;
+      --text: #e0e0e0;
+      --black: #0f0f0f;
+      --card-bg: rgba(255, 255, 255, 0.05);
+      --glow: rgba(255, 255, 255, 0.2);
     }
 
     * {
+      margin: 0;
+      padding: 0;
       box-sizing: border-box;
     }
 
     body {
-      margin: 0;
-      font-family: 'Quicksand', sans-serif;
-      background: linear-gradient(135deg, var(--pastel-pink), var(--pastel-mint));
+      font-family: 'Poppins', sans-serif;
+      background-color: var(--black);
+      background-image: radial-gradient(circle at top left, var(--mint), transparent 60%),
+                        radial-gradient(circle at bottom right, var(--purple), transparent 60%);
+      color: var(--text);
       display: flex;
-      justify-content: center;
+      flex-direction: column;
       align-items: center;
-      height: 100vh;
-      overflow: hidden;
-      animation: gradientShift 10s infinite ease alternate;
-    }
-
-    @keyframes gradientShift {
-      0% { background-position: 0% 50%; }
-      100% { background-position: 100% 50%; }
-    }
-
-    .container {
-      background: var(--bg-white);
+      justify-content: center;
+      min-height: 100vh;
       padding: 2rem;
-      border-radius: 25px;
-      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.1);
+      overflow-x: hidden;
+    }
+
+    header {
       text-align: center;
-      width: 90%;
-      max-width: 420px;
-      position: relative;
-      z-index: 2;
-      border: 4px dashed var(--pastel-blue);
-      animation: popIn 0.6s ease-out;
+      animation: fadeIn 1.2s ease-out forwards;
     }
 
-    @keyframes popIn {
-      from { transform: scale(0.95); opacity: 0; }
-      to { transform: scale(1); opacity: 1; }
-    }
-
-    h2 {
-      margin-bottom: 1rem;
-      color: var(--text-color);
-      font-weight: 600;
-      background: linear-gradient(90deg, var(--pastel-purple), var(--pastel-blue));
+    header h1 {
+      font-size: 3rem;
+      font-weight: 700;
+      background: linear-gradient(90deg, var(--pink), var(--blue));
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
+      text-shadow: 0 0 10px var(--glow);
+      animation: slideDown 1.2s ease-out;
     }
 
-    input[type="password"] {
-      padding: 0.7rem;
-      border-radius: 12px;
-      border: 1px solid #ccc;
+    header p {
+      font-size: 1.1rem;
+      color: var(--text);
+      margin-top: 0.5rem;
+      opacity: 0.8;
+      animation: fadeIn 1.8s ease-out;
+    }
+
+    .card {
+      background: var(--card-bg);
+      backdrop-filter: blur(15px);
+      border-radius: 24px;
+      box-shadow: 0 10px 40px rgba(255, 255, 255, 0.05);
+      padding: 2.5rem;
       width: 100%;
-      margin-bottom: 1rem;
-      font-size: 1rem;
-      transition: box-shadow 0.3s;
+      max-width: 540px;
+      margin-top: 2rem;
+      animation: riseUp 1.5s ease-out;
+      border: 1px solid rgba(255, 255, 255, 0.08);
     }
 
-    input[type="password"]:focus {
-      outline: none;
-      box-shadow: 0 0 10px var(--pastel-purple);
+    .card h2 {
+      font-size: 1.8rem;
+      margin-bottom: 1.5rem;
+      background: linear-gradient(90deg, var(--yellow), var(--pink));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-align: center;
+      animation: fadeIn 2s ease-in;
     }
 
-    button {
-      padding: 0.7rem 1.5rem;
-      background-color: var(--pastel-purple);
+    .buttons {
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem;
+      animation: fadeInUp 1.6s ease-out;
+    }
+
+    .buttons button {
+      padding: 1rem 1.5rem;
       border: none;
-      border-radius: 15px;
+      border-radius: 16px;
       font-size: 1rem;
+      font-weight: 600;
       cursor: pointer;
-      transition: background-color 0.3s, transform 0.2s;
+      color: var(--black);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      background-size: 300% 100%;
+      background-position: left;
+      background-repeat: no-repeat;
+      animation: pulse 6s infinite ease-in-out;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
     }
 
-    button:hover {
-      background-color: var(--pastel-blue);
+    .buttons button:hover {
       transform: scale(1.05);
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.15);
     }
 
-    .hidden {
-      display: none;
+    .buttons button:nth-child(1) {
+      background-image: linear-gradient(to right, var(--blue), var(--mint));
     }
 
-    .links button {
-      display: block;
-      width: 100%;
-      margin: 0.6rem 0;
-      background-color: var(--pastel-yellow);
-      font-weight: bold;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    .buttons button:nth-child(2) {
+      background-image: linear-gradient(to right, var(--purple), var(--pink));
     }
 
-    .decor {
-      position: absolute;
-      width: 120px;
-      height: 120px;
-      border-radius: 50%;
-      opacity: 0.25;
-      filter: blur(10px);
-      z-index: 0;
-      animation: float 6s ease-in-out infinite;
+    .buttons button:nth-child(3) {
+      background-image: linear-gradient(to right, var(--mint), var(--yellow));
     }
 
-    .decor.pink { background: var(--pastel-pink); top: 8%; left: 5%; animation-delay: 0s; }
-    .decor.blue { background: var(--pastel-blue); bottom: 12%; right: 10%; animation-delay: 2s; }
-    .decor.purple { background: var(--pastel-purple); top: 18%; right: 25%; animation-delay: 4s; }
-
-    @keyframes float {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-15px); }
+    .buttons button:nth-child(4) {
+      background-image: linear-gradient(to right, var(--yellow), var(--blue));
     }
 
-    #error {
-      color: red;
-      margin-top: 1rem;
-      animation: shake 0.3s ease;
+    .buttons i {
+      font-size: 1.2rem;
     }
 
-    @keyframes shake {
-      0% { transform: translateX(0); }
-      25% { transform: translateX(-5px); }
-      50% { transform: translateX(5px); }
-      75% { transform: translateX(-5px); }
-      100% { transform: translateX(0); }
+    footer {
+      margin-top: 3rem;
+      font-size: 0.9rem;
+      color: #aaa;
+      text-align: center;
+      animation: fadeIn 2s ease-in;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @keyframes slideDown {
+      from { transform: translateY(-40px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+
+    @keyframes riseUp {
+      from { transform: translateY(60px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(40px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes pulse {
+      0%, 100% {
+        background-position: left;
+      }
+      50% {
+        background-position: right;
+      }
+    }
+
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 2.2rem;
+      }
+      .card h2 {
+        font-size: 1.5rem;
+      }
     }
   </style>
 </head>
 <body>
-  <div class="decor pink"></div>
-  <div class="decor blue"></div>
-  <div class="decor purple"></div>
+  <header>
+    <h1>Komisi Kalkulator</h1>
+    <p>Specialized web-based platform designed to streamline commission calculations for delivery service personnel</p>
+  </header>
 
-  <div class="container" id="login-box">
-    <h2>Welcome to the Portal</h2>
-    <p style="color:#666; font-size:0.9rem; margin-bottom:1.5rem;">Authorized access only. Please enter the password.</p>
-    <input type="password" id="password" placeholder="Enter password here" />
-    <button onclick="checkPassword()">Login</button>
-    <p id="error" style="display:none;">Wrong password!</p>
-  </div>
-
-  <div class="container hidden" id="link-box">
-    <h2>Select a Destination</h2>
-    <div class="links">
-      <button onclick="location.href='kerjaan1.html'">Sarana Kasih Kargo</button>
-      <button onclick="location.href='kerjaan2.html'">Sinar Trans Express</button>
-      <button onclick="location.href='Kerjaan 3.html'">Megatransportasi Express</button>
-      <button onclick="location.href='kerjaan4.html'">Vaksin MJP</button>
+  <div class="card">
+    <h2>Choose Your Service</h2>
+    <div class="buttons">
+      <button onclick="location.href='kerjaan1.html'"><i class="fas fa-truck"></i> Sarana Kasih Kargo</button>
+      <button onclick="location.href='kerjaan2.html'"><i class="fas fa-shipping-fast"></i> Sinar Trans Express</button>
+      <button onclick="location.href='kerjaan3.html'"><i class="fas fa-box"></i> Megatransportasi Express</button>
+      <button onclick="location.href='kerjaan4.html'"><i class="fas fa-syringe"></i> Vaksin MJP</button>
     </div>
   </div>
 
-  <script>
-    function checkPassword() {
-      const input = document.getElementById('password').value;
-      const error = document.getElementById('error');
-      if (input === 'Kentir123') {
-        document.getElementById('login-box').classList.add('hidden');
-        document.getElementById('link-box').classList.remove('hidden');
-      } else {
-        error.style.display = 'block';
-        error.style.animation = 'shake 0.3s ease';
-        setTimeout(() => error.style.animation = '', 300);
-      }
-    }
-  </script>
+  <footer>
+    &copy; 2025 ee. All rights reserved.
+  </footer>
 </body>
 </html>
