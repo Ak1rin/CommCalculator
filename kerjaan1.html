@@ -7,6 +7,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <style>
+    /* ... your existing styles ... (unchanged) ... */
     :root {
       --primary-pastel: #A8E6CF; 
       --secondary-pastel: #FFD3B6; 
@@ -19,7 +20,6 @@
       --border-radius: 10px; 
       --box-shadow: 0 5px 20px rgba(0, 0, 0, 0.07);
     }
-
     body {
       font-family: 'Nunito', Arial, sans-serif;
       background-color: var(--bg-light);
@@ -28,7 +28,6 @@
       color: var(--text-dark);
       line-height: 1.7;
     }
-
     .page-container { 
       max-width: 1000px;
       margin: 30px auto;
@@ -37,7 +36,6 @@
       border-radius: var(--border-radius);
       box-shadow: var(--box-shadow);
     }
-
     header {
       background: linear-gradient(135deg, var(--primary-pastel), var(--secondary-pastel));
       color: var(--text-dark); 
@@ -54,12 +52,10 @@
       margin-right: 10px;
       color: var(--accent-pastel);
     }
-
     nav {
       margin-bottom: 30px; 
       text-align: center;
     }
-
     nav a {
       color: var(--accent-pastel);
       text-decoration: none;
@@ -71,7 +67,6 @@
       border: 2px solid var(--secondary-pastel);
       transition: all 0.3s ease;
     }
-
     nav a:hover {
       background-color: var(--secondary-pastel);
       color: var(--white-color);
@@ -80,7 +75,6 @@
     nav a i {
       margin-right: 8px;
     }
-
     .form-controls {
       background-color: var(--bg-light);
       padding: 25px;
@@ -96,14 +90,12 @@
       display: flex;
       flex-direction: column;
     }
-
     .input-group label {
       font-size: 0.9em;
       color: var(--text-light);
       margin-bottom: 6px;
       font-weight: 600;
     }
-
     input[type="text"],
     input[type="number"] {
       padding: 12px 15px;
@@ -115,14 +107,12 @@
       box-sizing: border-box;
       transition: border-color 0.3s ease, box-shadow 0.3s ease;
     }
-
     input[type="text"]:focus,
     input[type="number"]:focus {
       border-color: var(--primary-pastel);
       box-shadow: 0 0 0 0.2rem rgba(168, 230, 207, 0.35);
       outline: none;
     }
-
     .button-group {
       grid-column: 1 / -1; 
       display: flex;
@@ -130,7 +120,6 @@
       gap: 15px;
       margin-top: 10px; 
     }
-
     button {
       padding: 12px 25px;
       font-family: 'Nunito', sans-serif;
@@ -146,7 +135,6 @@
     button i {
       margin-right: 8px;
     }
-
     button.add-btn {
       background-color: var(--primary-pastel);
       color: var(--text-dark); 
@@ -155,7 +143,6 @@
       background-color: #8cd9b3; 
       transform: translateY(-2px);
     }
-
     button.export-btn {
       background-color: var(--secondary-pastel);
       color: var(--text-dark); 
@@ -164,7 +151,6 @@
       background-color: #ffc5a1; 
       transform: translateY(-2px);
     }
-
     table {
       width: 100%;
       border-collapse: separate; 
@@ -174,7 +160,6 @@
       border-radius: var(--border-radius);
       overflow: hidden; 
     }
-
     th, td {
       border-bottom: 1px solid var(--border-color);
       padding: 15px; 
@@ -193,8 +178,6 @@
      td:nth-child(3), th:nth-child(3) { 
         text-align: center;
     }
-
-
     th {
       background-color: var(--primary-pastel);
       color: var(--text-dark);
@@ -202,18 +185,15 @@
       text-transform: uppercase;
       letter-spacing: 0.5px;
     }
-
     tbody tr:nth-child(even) {
       background-color: var(--bg-light);
     }
-
     tbody tr:hover {
       background-color: #e6f7f1; 
     }
     tbody tr td {
         color: var(--text-dark);
     }
-
     @media (max-width: 768px) {
       body {
         padding: 10px;
@@ -241,68 +221,34 @@
         flex-direction: column;
       }
     }
-.changelog-sidebar {
-  width: 250px;
-  background: #fdf6ff;
-  border-radius: 16px;
-  padding: 16px;
-  font-family: 'Segoe UI', sans-serif;
-  box-shadow: 0 0 10px rgba(0,0,0,0.05);
-  overflow-y: auto;
-  max-height: 600px;
-  color: #555;
-}
-
-.changelog-sidebar h3 {
-  font-size: 1.2rem;
-  margin-bottom: 1rem;
-  color: #a06ab4;
-}
-
-.changelog-entry {
-  margin-bottom: 1rem;
-  background: #fff0fb;
-  border-left: 4px solid #d89ccf;
-  padding: 10px;
-  border-radius: 8px;
-}
-
-.changelog-entry .date {
-  font-size: 0.8rem;
-  color: #999;
-  margin-bottom: 0.3rem;
-}
-.changelog-sidebar {
-  width: 250px;
-  background: #fdf6ff;
-  border-radius: 16px;
-  padding: 16px;
-  font-family: 'Segoe UI', sans-serif;
-  box-shadow: 0 0 10px rgba(0,0,0,0.05);
-  overflow-y: auto;
-  max-height: 600px;
-  color: #555;
-}
-
-.changelog-sidebar h3 {
-  font-size: 1.2rem;
-  margin-bottom: 1rem;
-  color: #a06ab4;
-}
-
-.changelog-entry {
-  margin-bottom: 1rem;
-  background: #fff0fb;
-  border-left: 4px solid #d89ccf;
-  padding: 10px;
-  border-radius: 8px;
-}
-
-.changelog-entry .date {
-  font-size: 0.8rem;
-  color: #999;
-  margin-bottom: 0.3rem;
-}
+    .changelog-sidebar {
+      width: 250px;
+      background: #fdf6ff;
+      border-radius: 16px;
+      padding: 16px;
+      font-family: 'Segoe UI', sans-serif;
+      box-shadow: 0 0 10px rgba(0,0,0,0.05);
+      overflow-y: auto;
+      max-height: 600px;
+      color: #555;
+    }
+    .changelog-sidebar h3 {
+      font-size: 1.2rem;
+      margin-bottom: 1rem;
+      color: #a06ab4;
+    }
+    .changelog-entry {
+      margin-bottom: 1rem;
+      background: #fff0fb;
+      border-left: 4px solid #d89ccf;
+      padding: 10px;
+      border-radius: 8px;
+    }
+    .changelog-entry .date {
+      font-size: 0.8rem;
+      color: #999;
+      margin-bottom: 0.3rem;
+    }
   </style>
 </head>
 <body>
@@ -311,13 +257,8 @@
     <nav>
       <a href="Kerjaan2.html"><i class="fas fa-arrow-left"></i> Kembali ke SINAR TRANS EXPRESS</a>
     </nav>
-
-  <!-- Main Content  -->
-  <div class="main-content">
-  </div>
-</div>
-
-
+    <!-- Main Content  -->
+    <div class="main-content"></div>
     <div class="form-controls">
       <div class="input-group">
         <label for="q"><i class="fas fa-tag"></i> Q (Koli)</label>
@@ -343,8 +284,9 @@
         <button onclick="addRow()" class="add-btn"><i class="fas fa-plus-circle"></i> Tambah Data</button>
         <button onclick="exportToExcel()" class="export-btn"><i class="fas fa-file-excel"></i> Download Excel</button>
       </div>
+      <!-- Success message will be injected here by JS -->
+      <div id="successMsg" style="display:none"></div>
     </div>
-
     <table id="dataTable">
       <thead>
         <tr>
@@ -355,17 +297,54 @@
           <th>Penerima</th>
           <th>Harga</th>
           <th>Komisi</th>
+          <th>Aksi</th>
         </tr>
       </thead>
       <tbody></tbody>
     </table>
   </div>
-
   <script>
+    let dataRows = [];
     let counter = 1;
 
     function formatCurrency(amount) {
       return new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR', minimumFractionDigits: 0 }).format(amount);
+    }
+
+    function showSuccess(msg) {
+      let msgDiv = document.getElementById('successMsg');
+      msgDiv.textContent = msg;
+      msgDiv.style.display = 'block';
+      setTimeout(() => { msgDiv.style.display = 'none'; }, 1800);
+    }
+
+    function saveData() {
+      localStorage.setItem('megatran_data', JSON.stringify(dataRows));
+    }
+
+    function loadData() {
+      const stored = localStorage.getItem('megatran_data');
+      dataRows = stored ? JSON.parse(stored) : [];
+    }
+
+    function renderTable() {
+      const table = document.getElementById("dataTable").getElementsByTagName("tbody")[0];
+      table.innerHTML = "";
+      counter = 1;
+      dataRows.forEach((row, idx) => {
+        const tr = document.createElement('tr');
+        tr.innerHTML = `
+          <td>${counter++}</td>
+          <td>${row.q}</td>
+          <td>${row.kg.toLocaleString('id-ID')}</td>
+          <td>${row.pengirim}</td>
+          <td>${row.penerima}</td>
+          <td>${formatCurrency(row.harga)}</td>
+          <td>${formatCurrency(row.komisi)}</td>
+          <td><button onclick="deleteRow(${idx})" title="Hapus" style="background:none;border:none;cursor:pointer;font-size:1.2em;"><span role="img" aria-label="delete">🗑️</span></button></td>
+        `;
+        table.appendChild(tr);
+      });
     }
 
     function addRow() {
@@ -375,7 +354,6 @@
       const penerima = document.getElementById("penerima").value.trim();
       const hargaValue = document.getElementById("harga").value.trim();
 
-      // Basic Validation
       if (!q || !kgValue || !pengirim || !penerima || !hargaValue) {
         alert("Semua kolom wajib diisi!");
         return;
@@ -393,33 +371,21 @@
         return;
       }
 
-
       let komisi = 0;
-      // Case-insensitive check for "semarang"
       const isSemarangPenerima = penerima.toLowerCase().includes("semarang");
       const isSemarangPengirim = pengirim.toLowerCase().includes("semarang");
 
       if (isSemarangPenerima) {
-        komisi = harga * 0.25; 
-      } else if (!isSemarangPengirim) { 
-        komisi = harga * 0.5; 
+        komisi = harga * 0.25;
+      } else if (!isSemarangPengirim) {
+        komisi = harga * 0.5;
       }
-  
 
-      const table = document.getElementById("dataTable").getElementsByTagName("tbody")[0];
-      const newRow = table.insertRow();
+      dataRows.push({ q, kg, pengirim, penerima, harga, komisi });
+      saveData();
+      renderTable();
+      showSuccess("Data berhasil ditambahkan!");
 
-      newRow.innerHTML = `
-        <td>${counter++}</td>
-        <td>${q}</td>
-        <td>${kg.toLocaleString('id-ID')}</td>
-        <td>${pengirim}</td>
-        <td>${penerima}</td>
-        <td>${formatCurrency(harga)}</td>
-        <td>${formatCurrency(komisi)}</td>
-      `;
-
-      
       document.getElementById("q").value = "";
       document.getElementById("kg").value = "";
       document.getElementById("pengirim").value = "";
@@ -428,43 +394,50 @@
       document.getElementById("q").focus();
     }
 
+    function deleteRow(idx) {
+      if (confirm("Yakin ingin menghapus data ini?")) {
+        dataRows.splice(idx, 1);
+        saveData();
+        renderTable();
+      }
+    }
+
     function exportToExcel() {
       const table = document.getElementById("dataTable");
       if (table.getElementsByTagName("tbody")[0].rows.length === 0) {
-          alert("Tidak ada data untuk diexport.");
-          return;
+        alert("Tidak ada data untuk diexport.");
+        return;
       }
-      // Using a more robust method if you were to include xlsx.js library
-      // For now, keeping the simple HTML table to Excel export
       let html = table.outerHTML;
-      // To ensure proper encoding for special characters and styles (basic)
       let uri = 'data:application/vnd.ms-excel;base64,';
       let template = `<html xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:x="urn:schemas-microsoft-com:office:excel" xmlns="http://www.w3.org/TR/REC-html40"><head><meta http-equiv="content-type" content="text/plain; charset=UTF-8"/></head><body><table>${html}</table></body></html>`;
       let base64 = function(s) { return window.btoa(unescape(encodeURIComponent(s))) };
-      
       let a = document.createElement('a');
       a.href = uri + base64(template.replace('{worksheet}', 'Sheet1').replace(/{table}/g, html));
       a.download = 'megatran_data.xls';
       a.click();
     }
+
+    window.onload = function() {
+      loadData();
+      renderTable();
+    }
   </script>
-<div style="display: flex; gap: 1rem; flex-wrap: wrap; margin-top: 40px;">
-  <!-- Changelog Sidebar -->
-  <aside style="flex: 1 1 300px; background-color: #ffffff; padding: 20px; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.06); max-width: 400px;">
-    <h3 style="color: #4B6CB7; margin-bottom: 15px;">📘 Update Log</h3>
-    
-    <div style="margin-bottom: 20px; border-left: 4px solid #4B6CB7; padding-left: 12px;">
-      <p style="font-size: 13px; color: #777;">2025-05-11</p>
-      <pre style="background-color: #f1f5fa; padding: 12px; border-radius: 8px; font-family: monospace; font-size: 14px; margin-top: 5px;">
+  <div style="display: flex; gap: 1rem; flex-wrap: wrap; margin-top: 40px;">
+    <!-- Changelog Sidebar -->
+    <aside style="flex: 1 1 300px; background-color: #ffffff; padding: 20px; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.06); max-width: 400px;">
+      <h3 style="color: #4B6CB7; margin-bottom: 15px;">📘 Update Log</h3>
+      <div style="margin-bottom: 20px; border-left: 4px solid #4B6CB7; padding-left: 12px;">
+        <p style="font-size: 13px; color: #777;">2025-05-11</p>
+        <pre style="background-color: #f1f5fa; padding: 12px; border-radius: 8px; font-family: monospace; font-size: 14px; margin-top: 5px;">
 if (isSemarangPenerima) {
   komisi = harga * 0.25;
 } else if (!isSemarangPengirim) {
   komisi = harga * 0.5;
 }
-      </pre>
-    </div>
-  </aside>
-</div>
-
+        </pre>
+      </div>
+    </aside>
+  </div>
 </body>
 </html>
