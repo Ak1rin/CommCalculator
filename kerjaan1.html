@@ -313,20 +313,6 @@
       <a href="Kerjaan2.html"><i class="fas fa-arrow-left"></i> Kembali ke SINAR TRANS EXPRESS</a>
     </nav>
 
-    <div style="display: flex; gap: 1rem;">
-  <!-- Changelog Sidebar (Put this before or after the main content for left or right placement) -->
-  <aside class="changelog-sidebar">
-    <h3>📘 Update Log</h3>
-    <div class="changelog-entry">
-      <p class="date">2025-05-11</p>
-      <p>✨if (isSemarangPenerima) {
-        komisi = harga * 0.25;
-      } else if (!isSemarangPengirim) { 
-        komisi = harga * 0.5;
-    </div>
-    <!-- Add more entries as needed -->
-  </aside>
-
   <!-- Main Content (what you already have) -->
   <div class="main-content">
     <!-- Your existing site content here -->
@@ -464,5 +450,25 @@
       a.click();
     }
   </script>
+<div style="display: flex; gap: 1rem; flex-wrap: wrap; margin-top: 40px;">
+  <!-- Changelog Sidebar -->
+  <aside style="flex: 1 1 300px; background-color: #ffffff; padding: 20px; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.06); max-width: 400px;">
+    <h3 style="color: #4B6CB7; margin-bottom: 15px;">📘 Update Log</h3>
+    
+    <div style="margin-bottom: 20px; border-left: 4px solid #4B6CB7; padding-left: 12px;">
+      <p style="font-size: 13px; color: #777;">2025-05-11</p>
+      <pre style="background-color: #f1f5fa; padding: 12px; border-radius: 8px; font-family: monospace; font-size: 14px; margin-top: 5px;">
+if (isSemarangPenerima) {
+  komisi = harga * 0.25;
+} else if (!isSemarangPengirim) {
+  komisi = harga * 0.5;
+}
+      </pre>
+    </div>
+
+    <!-- Add more changelog entries below as needed -->
+  </aside>
+</div>
+
 </body>
 </html>
