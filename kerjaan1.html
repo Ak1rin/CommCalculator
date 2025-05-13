@@ -259,10 +259,7 @@
     </nav>
     <!-- Main Content  -->
     <div class="main-content"></div>
-    <div class="input-group">
-      <label for="nomorResi"><i class="fas fa-barcode"></i> Nomor Resi</label>
-      <input type="text" id="nomorResi" placeholder="Masukkan Nomor Resi" />
-    </div>
+    <div class="form-controls">
       <div class="input-group">
         <label for="q"><i class="fas fa-tag"></i> Q (Koli)</label>
         <input type="number" id="q" placeholder="Contoh: 5, 10" />
@@ -294,7 +291,6 @@
       <thead>
         <tr>
           <th>No</th>
-          <th>Nomor Resi</th>
           <th>Q</th>
           <th>KG</th>
           <th>Pengirim</th>
@@ -339,7 +335,6 @@
         const tr = document.createElement('tr');
         tr.innerHTML = `
           <td>${counter++}</td>
-          <td>${row.nomorResi}</td>
           <td>${row.q}</td>
           <td>${row.kg.toLocaleString('id-ID')}</td>
           <td>${row.pengirim}</td>
@@ -353,14 +348,13 @@
     }
 
     function addRow() {
-      const nomorResi = document.getElementById("nomorResi").value.trim();
       const q = document.getElementById("q").value.trim();
       const kgValue = document.getElementById("kg").value.trim();
       const pengirim = document.getElementById("pengirim").value.trim();
       const penerima = document.getElementById("penerima").value.trim();
       const hargaValue = document.getElementById("harga").value.trim();
 
-      if (!nomorResi || !q || !kgValue || !pengirim || !penerima || !hargaValue) {
+      if (!q || !kgValue || !pengirim || !penerima || !hargaValue) {
         alert("Semua kolom wajib diisi!");
         return;
       }
@@ -387,12 +381,11 @@
         komisi = harga * 0.5;
       }
 
-      dataRows.push({ nomorResi, q, kg, pengirim, penerima, harga, komisi });
+      dataRows.push({ q, kg, pengirim, penerima, harga, komisi });
       saveData();
       renderTable();
       showSuccess("Data berhasil ditambahkan!");
 
-      document.getElementById("nomorResi").value = "";
       document.getElementById("q").value = "";
       document.getElementById("kg").value = "";
       document.getElementById("pengirim").value = "";
@@ -408,16 +401,15 @@
         renderTable();
       }
     }
-      function exportToExcel() {
-  const table = document.getElementById("dataTable");
-  const rows = table.getElementsByTagName("tbody")[0].rows;
-  if (rows.length === 0) {
-    alert("Tidak ada data untuk diekspor.");
-    return;
-  }
+
+    function exportToExcel() {
+      const table = document.getElementById("dataTable");
+      if (table.getElementsByTagName("tbody")[0].rows.length === 0) {
+        alert("Tidak ada data untuk diexport.");
+        return;
+      }
       let html = table.outerHTML;
       let uri = 'data:application/vnd.ms-excel;base64,';
-      let template = `<html xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:x="urn:schemas-microsoft-com:office:excel" xmlns="http://www.w3.org/TR/REC-html40"><head><meta http-equiv="content-type" content="text/plain; charset=UTF-8"/></head><body><table>${html}</table></body></html>`;
       let template = `<html xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:x="urn:schemas-microsoft-com:office:excel" xmlns="http://www.w3.org/TR/REC-html40"><head><meta http-equiv="content-type" content="text/plain; charset=UTF-8"/></head><body><table>${html}</table></body></html>`;
       let base64 = function(s) { return window.btoa(unescape(encodeURIComponent(s))) };
       let a = document.createElement('a');
