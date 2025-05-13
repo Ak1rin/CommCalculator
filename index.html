@@ -29,7 +29,7 @@
       font-family: 'Poppins', sans-serif;
       background-color: var(--black);
       background-image: radial-gradient(circle at top left, var(--mint), transparent 60%),
-                        radial-gradient(circle at bottom right, var(--purple), transparent 60%);
+                       radial-gradient(circle at bottom right, var(--purple), transparent 60%);
       color: var(--text);
       display: flex;
       flex-direction: column;
@@ -37,7 +37,10 @@
       justify-content: center;
       min-height: 100vh;
       padding: 2rem;
+      /* Add padding bottom to prevent fixed button from overlapping content */
+      padding-bottom: 100px; /* Adjust this value if needed */
       overflow-x: hidden;
+      position: relative; /* Needed for absolute positioning if not using fixed */
     }
 
     header {
@@ -144,6 +147,38 @@
       animation: fadeIn 2s ease-in;
     }
 
+    /* --- New styles for the Repository button --- */
+    .large-bottom-button {
+      display: inline-block; /* Treat as a button */
+      padding: 1.5rem 3rem; /* Make it large */
+      font-size: 1.2rem; /* Larger text */
+      font-weight: 600;
+      text-decoration: none; /* Remove underline */
+      color: var(--black); /* Text color */
+      background-image: linear-gradient(to right, var(--mint), var(--blue)); /* Example gradient */
+      background-size: 300% 100%;
+      background-position: left;
+      background-repeat: no-repeat;
+      border: none;
+      border-radius: 16px;
+      cursor: pointer;
+      transition: transform 0.3s ease, box-shadow 0.3s ease, background-position 0.6s ease; /* Add background transition */
+      position: fixed; /* Position relative to viewport */
+      bottom: 30px; /* Distance from bottom */
+      left: 50%; /* Start at horizontal center */
+      transform: translateX(-50%); /* Shift left by half its width to center */
+      z-index: 1000; /* Ensure it's above other content */
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); /* Add subtle shadow */
+    }
+
+    .large-bottom-button:hover {
+      transform: translateX(-50%) scale(1.05); /* Scale and stay centered */
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.2); /* Hover shadow */
+      background-position: right; /* Apply gradient transition on hover */
+    }
+    /* --- End new styles --- */
+
+
     @keyframes fadeIn {
       from { opacity: 0; }
       to { opacity: 1; }
@@ -164,6 +199,7 @@
       to { opacity: 1; transform: translateY(0); }
     }
 
+     /* Existing pulse animation for other buttons */
     @keyframes pulse {
       0%, 100% {
         background-position: left;
@@ -179,6 +215,15 @@
       }
       .card h2 {
         font-size: 1.5rem;
+      }
+      /* Adjust button size/padding for smaller screens if needed */
+      .large-bottom-button {
+        padding: 1rem 2rem;
+        font-size: 1rem;
+        bottom: 20px; /* Adjust bottom distance */
+      }
+      body {
+         padding-bottom: 80px; /* Adjust bottom padding for smaller screens */
       }
     }
   </style>
@@ -202,5 +247,8 @@
   <footer>
     &copy; 2025 :v. All rights reserved.
   </footer>
+
+  <a href="KerjaanDownload.html" class="large-bottom-button">Repository</a>
+
 </body>
 </html>
